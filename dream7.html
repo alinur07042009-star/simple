@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title style="border: 20px solid red;background-color: aqua;">Welcome to the <mark>tesla Tesla !</mark></title>
+  <head>
+<body>
+
+ <style>
+        :root{
+            --accent-red:#d32f2f;
+            --accent-yellow:#ffe066;
+            --table-header:#ffcc00;
+            --table-row:#9b59ff;
+            --table-row-alt:#8e44ad;
+            --nav-green:#2ecc71;
+            --button-green:#9bff5f;
+            --page-bg:#ffffff;
+            --container-w:1100px;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--page-bg);
+            margin:20px;
+            color:#222;
+        }
+        .wrap{
+            max-width:var(--container-w);
+            margin:0 auto;
+        }
+
+        header.banner{
+            border:3px solid var(--accent-red);
+            border-radius:18px;
+            background:linear-gradient(#f5f7ff,#e6eeff);
+            padding:6px 12px;
+            text-align:center;
+            margin-bottom:14px;
+        }
+        header.banner h1{
+            margin:6px;
+            font-size:24px;
+            color:#0b3d91;
+            display:inline-block;
+            background:var(--accent-yellow);
+            padding:4px 12px;
+            border-radius:6px;
+        }
+
+        .topbar{
+            display:flex;
+            gap:20px;
+            margin-bottom:10px;
+        }
+        nav{
+            min-width:200px;
+            font-size:14px;
+        }
+        nav h3{ color:#1a7f2b; margin-bottom:6px;}
+        nav a{
+            display:block; color:#2b7fbf; text-decoration:none; margin:2px 0;
+        }
+
+        .content{
+            display:flex;
+            gap:20px;
+            align-items:flex-start;
+        }
+
+        /* table */
+        .specs {
+            border-collapse:collapse;
+            width:100%;
+            margin-bottom:12px;
+            font-size:14px;
+        }
+        .specs th{
+            background:var(--table-header);
+            color:#000;
+            padding:6px 8px;
+            border:2px solid #b56500;
+        }
+        .specs td{
+            padding:8px;
+            text-align:left;
+            border:1px solid #b56500;
+            background:var(--table-row);
+            color:#fff;
+        }
+        .specs tr:nth-child(even) td{ background:var(--table-row-alt); }
+
+        /* form area */
+        .controls{
+            margin:8px 0 18px 0;
+            font-size:14px;
+        }
+        .controls label{ display:block; margin:6px 0; }
+        .color-swatch{
+            display:inline-block; width:24px;height:16px;border:1px solid #000;margin-left:8px;vertical-align:middle;
+        }
+        .btn{
+            display:inline-block;
+            padding:8px 16px;
+            background:var(--button-green);
+            color:#000;
+            border-radius:4px;
+            border:1px solid #6fbf2b;
+            cursor:pointer;
+            margin-top:6px;
+        }
+
+        /* car gallery */
+        .gallery{
+            display:grid;
+            grid-template-columns:repeat(2,1fr);
+            gap:20px;
+            margin:18px 0;
+        }
+        .car{
+            width:100%;
+            text-align:center;
+        }
+        .car img{
+            max-width:100%;
+            height:auto;
+            border-radius:8px;
+            box-shadow:0 6px 18px rgba(0,0,0,0.25);
+        }
+
+        /* map */
+        .map-wrapper{
+            margin-top:12px;
+        }
+
+        /* small screens */
+        @media (max-width:900px){
+            .content{ flex-direction:column; }
+            .gallery{ grid-template-columns:1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="banner">
+            <h1>Добро пожаловать на сайт Tesla!</h1>
+        </header>
+
+        <div class="topbar">
+            <nav>
+                <h3>Вы здесь узнаете о машинах Tesla</h3>
+                <ul style="padding-left:18px;margin-top:6px;">
+                    <li style="color:var(--nav-green)">Наши машины</li>
+                    <li><a href="#model-y">Tesla Model Y</a></li>
+                    <li><a href="#model-x">Tesla Model X</a></li>
+                    <li><a href="#model-3">Tesla Model 3</a></li>
+                    <li><a href="#model-s">Tesla Model S</a></li>
+                </ul>
+            </nav>
+
+            <main style="flex:1">
+                <section>
+                    <h2 style="font-size:18px;margin:6px 0;">Полная информация о Tesla</h2>
+
+                    <table class="specs" aria-label="Таблица характеристик Tesla">
+                        <thead>
+                            <tr>
+                                <th>Название</th>
+                                <th>Батарея</th>
+                                <th>Разгон 0–100 км/ч</th>
+                                <th>Максимальная скорость</th>
+                                <th>Запас хода</th>
+                                <th>Мощность двигателя</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="model-y">
+                                <td>Tesla Model Y</td>
+                                <td>90 кВт·ч</td>
+                                <td>5 сек</td>
+                                <td>217 км/ч</td>
+                                <td>533 км (WLTP)</td>
+                                <td>345 л.с.</td>
+                            </tr>
+                            <tr id="model-x">
+                                <td>Tesla Model X</td>
+                                <td>110 кВт·ч</td>
+                                <td>3.9 сек</td>
+                                <td>250 км/ч</td>
+                                <td>576 км (WLTP)</td>
+                                <td>680 л.с.</td>
+                            </tr>
+                            <tr id="model-3">
+                                <td>Tesla Model 3</td>
+                                <td>75 кВт·ч</td>
+                                <td>4.4 сек</td>
+                                <td>201 км/ч</td>
+                                <td>629 км (WLTP)</td>
+                                <td>498 л.с.</td>
+                            </tr>
+                            <tr id="model-s">
+                                <td>Tesla Model S</td>
+                                <td>110 кВт·ч</td>
+                                <td>3.2 сек</td>
+                                <td>250 км/ч</td>
+                                <td>634 км (WLTP)</td>
+                                <td>680 л.с.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <form class="controls" onsubmit="alert('Форма отправлена'); return false;">
+                        <label>Выберите цвет машины:
+                            <input type="color" value="#000000" title="Выбор цвета">
+                            <span class="color-swatch" style="background:#000000"></span>
+                        </label>
+
+                        <label>Выберите модель машины:</label>
+                        <label><input type="radio" name="model" value="y" checked> Tesla Model Y</label>
+                        <label><input type="radio" name="model" value="x"> Tesla Model X</label>
+                        <label><input type="radio" name="model" value="3"> Tesla Model 3</label>
+                        <label><input type="radio" name="model" value="s"> Tesla Model S</label>
+
+                        <div>
+                            <button class="btn" type="submit">Отправить</button>
+                        </div>
+                    </form>
+
+                </section>
+            </main>
+        </div>
+
+        <section class="gallery" aria-label="Галерея машин">
+            <!-- Placeholder images: замените на реальные фото по желанию -->
+            <figure class="car">
+                <img src="dream1.jpg" alt="Tesla Model Y">
+            </figure>
+            <figure class="car">
+                <img src="dream2.jpg" alt="Tesla Model X">
+            </figure>
+            <figure class="car">
+                <img src="dream.jpg" alt="Tesla Model 3">
+            </figure>
+            <figure class="car">
+                <img src="dream 3.jpg" alt="Tesla Model S">
+            </figure>
+        </section>
+
+        <section class="map-wrapper">
+            <h3>Сервис Tesla в Ташкенте</h3>
+            <iframe
+                src="https://www.google.com/maps?q=Tashkent+Tesla+service&output=embed"
+                width="100%" height="400" style="border:0" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+
+      </div>
+</body>
+  </head>
+                    
